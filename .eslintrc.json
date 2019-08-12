@@ -1,0 +1,60 @@
+{
+  "env": {
+    "jest": true
+  },
+
+  "parser": "babel-eslint",
+  "plugins": ["react", "react-native", "prettier"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
+    }
+  },
+
+  "extends": ["airbnb", "prettier", "prettier/react"],
+
+  "settings": {
+    "react": {
+      "createClass": "createReactClass",
+      "version": "detect",
+      "flowVersion": "0.53"
+    },
+    "propWrapperFunctions": [
+      "forbidExtraProps",
+      {
+        "property": "freeze",
+        "object": "Object"
+      },
+      { "property": "myFavoriteWrapper" }
+    ],
+    "linkComponents": ["Hyperlink", { "name": "Link", "linkAttribute": "to" }],
+    "import/resolver": { "babel-module": {} }
+  },
+
+  "rules": {
+    "no-plusplus": "off",
+    "react/prop-types": ["error", { "ignore": ["navigation"] }],
+    "class-methods-use-this": "off",
+    "react/prefer-es6-class": 0,
+    "react/jsx-filename-extension": 0,
+    "react/forbid-prop-types": "off",
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "prefer-const": "warn",
+    "comma-dangle": ["error", "always-multiline"],
+    "no-console": "off",
+    "arrow-body-style": "warn",
+    "max-len": [
+      "error",
+      {
+        "code": 80,
+        "ignoreComments": true,
+        "ignoreTrailingComments": true,
+        "ignoreUrls": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreRegExpLiterals": true
+      }
+    ]
+  }
+}
