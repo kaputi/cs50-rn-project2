@@ -1,15 +1,28 @@
 import React from 'react'
-import { StyleSheet, View } from 'react-native'
+import { View, StyleSheet } from 'react-native'
+import { Logs } from 'expo'
+
+import MainNavigator from './components/navigators/MainStackNavigator'
+
+// https://stackoverflow.com/a/42839384/1123156
+const isRemoteDebuggingEnabled = typeof atob !== 'undefined'
+if (isRemoteDebuggingEnabled) {
+  Logs.disableExpoCliLogging()
+} else {
+  Logs.enableExpoCliLogging()
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingTop: 27,
   },
 })
 
-const App = () => <View style={styles.container}></View>
+const App = () => (
+  <View style={styles.container}>
+    <MainNavigator />
+  </View>
+)
 
 export default App
