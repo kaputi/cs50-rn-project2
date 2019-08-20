@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import React, { Component } from 'react'
 import { View, Text, TextInput, TouchableOpacity, FlatList } from 'react-native'
 
