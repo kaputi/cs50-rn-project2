@@ -1,15 +1,14 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation'
 
-import TabNavigator from './TabNavigator'
+import ListScreen from '../screens/List'
 import DetailsScreen from '../screens/Details'
 
 const StackNavigator = createStackNavigator(
   {
-    home: TabNavigator,
+    home: ListScreen,
     details: DetailsScreen,
   },
   {
-    initialRouteName: 'home',
     headerMode: 'none',
   }
 )
