@@ -1,3 +1,5 @@
+import { getMissingInfo } from './moviesAPI'
+
 const key = '6374c3f94dec7aa26ae4c1b3ee43d4d7'
 const baseUrl = 'https://api.themoviedb.org/3'
 
@@ -20,5 +22,7 @@ export const getDetails = async (id, type = 'movie') => {
   const data = await fetch(url)
   const json = await data.json()
 
-  return json
+  const missingInfo = await getMissingInfo(json.imdb_id)
+
+  return { ...json, ...missingInfo }
 }
